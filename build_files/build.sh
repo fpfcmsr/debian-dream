@@ -2,21 +2,24 @@
 
 set -ouex pipefail
 
+# enable repos for zfs
+sed -i 's/ main$/ main contrib/' /etc/apt/sources.list || true
+sed -i 's/ main$/ main contrib/' /etc/apt/sources.list.d/debian.sources || true || true
+apt update
+
 ### Install packages
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-apt install -y podman
+# zfs stuff
+apt install -y linux-image-amd64 linux-headers-amd64
+apt install -y zfs-initramfs zfsutils-linux zfs-dkms cryptsetup cryptsetup-initramfs
 
-# this installs a package from fedora repos
+# systemdboot stuff
+apt install -y efitools sbsigntool efibootmgr openssl sbverify systemd-ukify rsync
+apt install -y systemd-boot 
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+#podman stuff
+apt install -y podman 
 
-#### Example for enabling a System Unit File
+#cockpit stuff
+# apt install -y cockpit cockpit-machines
+
