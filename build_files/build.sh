@@ -14,12 +14,12 @@ apt install -y linux-image-amd64 linux-headers-amd64
 apt install -y zfs-initramfs zfsutils-linux zfs-dkms cryptsetup cryptsetup-initramfs
 
 # systemdboot stuff
-apt install -y efitools sbsigntool efibootmgr openssl sbverify systemd-ukify rsync
-apt install -y systemd-boot 
+apt install -y efitools sbsigntool efibootmgr openssl systemd-ukify rsync systemd-boot
 
 #podman stuff
 apt install -y podman 
 
 #cockpit stuff
-# apt install -y cockpit cockpit-machines
+apt install -y cockpit cockpit-machines
+# note to add the zfs manager stuff also 
 
