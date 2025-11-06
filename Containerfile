@@ -2,6 +2,8 @@
 FROM scratch AS ctx
 COPY build_files /
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # Base Image
 FROM ghcr.io/bootcrew/debian-bootc:latest
 
