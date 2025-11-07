@@ -1,6 +1,7 @@
 # Debian + zfs + immutable root experiment
 If this works I plan to use this myself either in VMs or bare metal
 - zfs
+- podman and docker 
 - cockpit for container, vm, and server management
   - cockpit zfs manager preinstalled as well (working on getting the new version up - the old version works well already)
 
