@@ -20,7 +20,9 @@ If this works I plan to use this myself either in VMs or bare metal
     $ export LUKS_PASSPHRASE='correct-horse-battery-staple'  
     $ export NEWUSER_PASSWORD='apassword'  
     $ export HOSTNAME=ahostname  
-    $ export USERNAME=myusername  
+    $ export USERNAME=myusername
+    $ export DISK1=/dev/disk/by-id/ID-yougot-above-1
+    $ export DISK2=/dev/disk/by-id/ID-yougot-above-2
     - run the installer  
     $ sudo ./install-bootc-zfs.sh DISK1 DISK2 ghcr.io/fpfcmsr/debian-dream:latest HOSTNAME USERNAME  
 
