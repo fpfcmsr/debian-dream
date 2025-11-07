@@ -8,7 +8,8 @@ If this works I plan to use this myself either in VMs or bare metal
 
 ## Current Status  
 - builds are working  
-- testing install method - the steps:  
+- testing install method (currently mostly vibe coded as I read through the bootc and systemd-repart docs)  
+- the steps:  
   - turn off secure boot (so zfs can be installed)  
     - in progress: script that autoenrolls mok with password "debian-dream"  
   - boot [debian trixie live iso](https://www.debian.org/CD/live)  
