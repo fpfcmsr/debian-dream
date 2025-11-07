@@ -8,8 +8,8 @@ set -ouex pipefail
 apt install -y curl ca-certificates gnupg lsb-release jq vim git
 
 # enable repos and install zfs
-sed -i 's/ main$/ main contrib/' /etc/apt/sources.list || true
-sed -i 's/ main$/ main contrib/' /etc/apt/sources.list.d/debian.sources || true || true
+sed -i 's/ main$/ main contrib non-free non-free-firmware/' /etc/apt/sources.list || true
+sed -i 's/ main$/ main contrib non-free non-free-firmware/' /etc/apt/sources.list.d/debian.sources || true || true
 apt update
 apt install -y linux-image-amd64 linux-headers-amd64
 apt install -y zfs-dkms zfs-zed zfs-initramfs zfsutils-linux 
@@ -43,7 +43,7 @@ sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin prohibit-password/' /etc/ssh/ssh
 apt install -y qemu-kvm libvirt-daemon-system libvirt-clients virtinst bridge-utils
 
 # firmware 
-apt install -y firmware-linux firmware-misc-nonfree intel-microcode amd64-microcode
+apt install -y firmware-linux 
 
 #cockpit stuff
 apt install -y cockpit cockpit-bridge cockpit-machines cockpit-networkmanager cockpit-packagekit cockpit-podman cockpit-storaged cockpit-system cockpit-ws
