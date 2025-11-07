@@ -18,12 +18,7 @@ If this works I plan to use this myself either in VMs or bare metal
     $ ls -l /dev/disk/by-id | grep -E 'nvme-|ata-|scsi-|wwn-' | grep -v -- '-part[0-9]\+$'  
     $ lsblk -d -o NAME,SIZE,MODEL,SERIAL,TYPE,TRAN  
     - set environment variables  
-    $ export LUKS_PASSPHRASE='correct-horse-battery-staple'  
-    $ export NEWUSER_PASSWORD='apassword'  
-    $ export HOSTNAME=ahostname  
-    $ export USERNAME=myusername  
-    $ export DISK1=/dev/disk/by-id/ID-yougot-above-1  
-    $ export DISK2=/dev/disk/by-id/ID-yougot-above-2  
+    $ bash ./pre-install.sh # make sure to change the values and edit the disk IDs from the values above
     - run the installer  
     $ sudo ./install-bootc-zfs.sh DISK1 DISK2 ghcr.io/fpfcmsr/debian-dream:latest HOSTNAME USERNAME  
 
@@ -34,7 +29,6 @@ If this works I plan to use this myself either in VMs or bare metal
   - Issues with new build seems to be around python3-libzfs
     - https://github.com/truenas/py-libzfs/issues/249
     - https://github.com/45Drives/cockpit-zfs/issues/6
-    - 
 
 # image-template
 
