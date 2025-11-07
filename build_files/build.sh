@@ -21,7 +21,7 @@ apt install -y efitools sbsigntool efibootmgr openssl systemd-ukify rsync system
 apt install -y podman
 
 # ssh
-openssh-server
+apt install -y openssh-server
 
 #cockpit stuff
 apt install -y cockpit cockpit-bridge cockpit-machines cockpit-networkmanager cockpit-packagekit cockpit-podman cockpit-storaged cockpit-system cockpit-ws
