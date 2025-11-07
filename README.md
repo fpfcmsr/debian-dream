@@ -28,7 +28,7 @@ If this works I plan to use this myself either in VMs or bare metal
 
 ## Stretch goals:  
 - setting up custom keys for secureboot not dependent on Microsoft   
-- figuring out python3-libzfs builds on debian trixie (currently broken due to new cython version and missing cgi, a legacy package)  
+- figuring out python3-libzfs builds on debian trixie (currently broken due to new cython version and missing cgi, a legacy package). This is to my knowledge required for:  
 - getting trixie builds for the newer [cockpit zfsmanager](https://github.com/45Drives/cockpit-zfs) extension  
   - the current build uses the old (still working) [zfsmanager version](https://github.com/45Drives/cockpit-zfs-manager)  
 
