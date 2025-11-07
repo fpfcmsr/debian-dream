@@ -7,7 +7,21 @@ If this works I plan to use this myself either in VMs or bare metal
 
 ## Current Status
 - builds are working
-- figuring out how to prepare install
+- testing install method - the steps:
+  - turn off secure boot
+  - boot [debian trixie live iso](https://www.debian.org/CD/live)
+  - git clone this repo and run the following in the terminal
+    - get your disk IDs (2 required)
+    $ ls -l /dev/disk/by-id | grep -E 'nvme-|ata-|scsi-|wwn-' | grep -v -- '-part[0-9]\+$'
+    $ lsblk -d -o NAME,SIZE,MODEL,SERIAL,TYPE,TRAN
+    - set environment variables
+    $ export LUKS_PASSPHRASE='correct-horse-battery-staple'
+    $ export NEWUSER_PASSWORD='apassword'
+    $ export HOSTNAME=ahostname
+    $ export USERNAME=myusername
+    - run the installer
+    $ sudo ./install-bootc-zfs.sh DISK1 DISK2 ghcr.io/fpfcmsr/debian-dream:latest HOSTNAME USERNAME
+
 
 # image-template
 
