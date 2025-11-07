@@ -27,5 +27,6 @@ apt install -y openssh-server
 apt install -y cockpit cockpit-bridge cockpit-machines cockpit-networkmanager cockpit-packagekit cockpit-podman cockpit-storaged cockpit-system cockpit-ws
 # note to add the zfs manager stuff also 
 mkdir /tmp/cockpit-zfs-manager
+apt install -y git # so we can git clone
 git clone https://github.com/45drives/cockpit-zfs-manager.git /tmp/cockpit-zfs-manager
 sudo cp -r /tmp/cockpit-zfs-manager/zfs /usr/share/cockpit
