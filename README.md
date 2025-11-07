@@ -1,3 +1,13 @@
+# Debian + zfs + immutable root experiment
+If this works I plan to use this myself either in VMs or bare metal
+- zfs
+- cockpit for container, vm, and server management
+  - cockpit zfs manager preinstalled as well (working on getting the new version up - the old version works well already)
+
+## Current Status
+- builds are working
+- figuring out how to prepare install
+
 # image-template
 
 This repository is meant to be a template for building your own custom [bootc](https://github.com/bootc-dev/bootc) image. This template is the recommended way to make customizations to any image published by the Universal Blue Project.
