@@ -3,26 +3,32 @@ If this works I plan to use this myself either in VMs or bare metal
 - zfs
 - podman and docker 
 - cockpit for container, vm, and server management
-  - cockpit zfs manager preinstalled as well (working on getting the new version up - the old version works well already)
+  - cockpit zfs manager preinstalled
+  - cockpit docker plugin? there seems to be a scattering of projects online so for now none are included by default
 
-## Current Status
-- builds are working
-- testing install method - the steps:
-  - turn off secure boot (so zfs can be installed)
-    - in progress: script that autoenrolls mok with password "debian-dream"
-  - boot [debian trixie live iso](https://www.debian.org/CD/live)
-  - git clone this repo and run the following in the terminal
-    - get your disk IDs (2 required)
-    $ ls -l /dev/disk/by-id | grep -E 'nvme-|ata-|scsi-|wwn-' | grep -v -- '-part[0-9]\+$'
-    $ lsblk -d -o NAME,SIZE,MODEL,SERIAL,TYPE,TRAN
-    - set environment variables
-    $ export LUKS_PASSPHRASE='correct-horse-battery-staple'
-    $ export NEWUSER_PASSWORD='apassword'
-    $ export HOSTNAME=ahostname
-    $ export USERNAME=myusername
-    - run the installer
-    $ sudo ./install-bootc-zfs.sh DISK1 DISK2 ghcr.io/fpfcmsr/debian-dream:latest HOSTNAME USERNAME
+## Current Status  
+- builds are working  
+- testing install method - the steps:  
+  - turn off secure boot (so zfs can be installed)  
+    - in progress: script that autoenrolls mok with password "debian-dream"  
+  - boot [debian trixie live iso](https://www.debian.org/CD/live)  
+  - git clone this repo and run the following in the terminal  
+    - get your disk IDs (2 required)  
+    $ ls -l /dev/disk/by-id | grep -E 'nvme-|ata-|scsi-|wwn-' | grep -v -- '-part[0-9]\+$'  
+    $ lsblk -d -o NAME,SIZE,MODEL,SERIAL,TYPE,TRAN  
+    - set environment variables  
+    $ export LUKS_PASSPHRASE='correct-horse-battery-staple'  
+    $ export NEWUSER_PASSWORD='apassword'  
+    $ export HOSTNAME=ahostname  
+    $ export USERNAME=myusername  
+    - run the installer  
+    $ sudo ./install-bootc-zfs.sh DISK1 DISK2 ghcr.io/fpfcmsr/debian-dream:latest HOSTNAME USERNAME  
 
+## Stretch goals:  
+- setting up custom keys for secureboot not dependent on Microsoft   
+- figuring out python3-libzfs builds on debian trixie (currently broken due to new cython version and missing cgi, a legacy package)  
+- getting trixie builds for the newer [cockpit zfsmanager](https://github.com/45Drives/cockpit-zfs) extension  
+  - the current build uses the old (still working) [zfsmanager version](https://github.com/45Drives/cockpit-zfs-manager)  
 
 # image-template
 
