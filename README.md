@@ -8,7 +8,7 @@ If this works I plan to use this myself either in VMs or bare metal
 ## Current Status
 - builds are working
 - testing install method - the steps:
-  - turn off secure boot
+  - turn off secure boot (so zfs can be installed - to turn it back on enroll mok first -> check post-install scripts)
   - boot [debian trixie live iso](https://www.debian.org/CD/live)
   - git clone this repo and run the following in the terminal
     - get your disk IDs (2 required)
