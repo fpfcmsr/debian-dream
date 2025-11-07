@@ -15,8 +15,8 @@ If this works I plan to use this myself either in VMs or bare metal
   - boot [debian trixie live iso](https://www.debian.org/CD/live)  
   - git clone this repo and run the following in the terminal  
     - get your disk IDs (2 required)
-      - will be something like nvme-SUPER-LONG-STRING-238324083240202834 -> nvme0n1
-      - do not select anything that maps to nvme0n1p1, the p1, p2 etc are partitions, you want the full disk so nvme0n1, nvme0n2, etc
+      - will be something like nvme-SUPER-LONG-STRING-238324083240202834 -> nvme0n1  
+      - do not select anything that maps to nvme0n1p1, the p1, p2 etc are partitions, you want the full disk so nvme0n1, nvme0n2, etc   
     $ ls -l /dev/disk/by-id | grep -E 'nvme-|ata-|scsi-|wwn-' | grep -v -- '-part[0-9]\+$'  
     $ lsblk -d -o NAME,SIZE,MODEL,SERIAL,TYPE,TRAN  
     - set environment variables  
