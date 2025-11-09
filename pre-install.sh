@@ -11,3 +11,4 @@ export HOSTNAME=ahostname
 export USERNAME=myusername
 export DISK1=/dev/disk/by-id/ID-yougot-above-1
 export DISK2=/dev/disk/by-id/ID-yougot-above-2
+export DEBIAN_FRONTEND=noninteractive
