@@ -42,7 +42,7 @@ sed -i 's/ main$/ main contrib non-free non-free-firmware/' /etc/apt/sources.lis
 sed -i 's/ main$/ main contrib non-free non-free-firmware/' /etc/apt/sources.list.d/debian.sources || true || true
 
 apt-get update
-apt-get install -y systemd dosfstools gdisk cryptsetup-bin zfsutils-linux podman efibootmgr
+apt-get install -y systemd dosfstools gdisk cryptsetup-bin zfsutils-linux podman efibootmgr systemd-repart
 
 podman pull "${IMAGE}" || true
 
