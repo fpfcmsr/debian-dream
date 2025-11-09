@@ -37,6 +37,10 @@ if [[ ! -d /sys/firmware/efi ]]; then
   exit 1
 fi
 
+# add sources so zfs utils can install
+sed -i 's/ main$/ main contrib non-free non-free-firmware/' /etc/apt/sources.list || true
+sed -i 's/ main$/ main contrib non-free non-free-firmware/' /etc/apt/sources.list.d/debian.sources || true || true
+
 apt-get update
 apt-get install -y systemd dosfstools gdisk cryptsetup-bin zfsutils-linux podman efibootmgr
 
