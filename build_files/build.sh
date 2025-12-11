@@ -12,7 +12,7 @@ sed -i 's/ main$/ main contrib non-free non-free-firmware/' /etc/apt/sources.lis
 sed -i 's/ main$/ main contrib non-free non-free-firmware/' /etc/apt/sources.list.d/debian.sources || true || true
 apt update
 apt install -y linux-image-amd64 linux-headers-amd64
-apt install -y zfs-dkms zfs-zed zfs-initramfs zfsutils-linux 
+apt install -y zfs-dkms zfs-zed zfs-initramfs zfsutils-linux sanoid
 
 # systemdboot + luks stuff 
 apt install -y cryptsetup cryptsetup-initramfs
@@ -24,8 +24,6 @@ apt install -y podman
 # ssh
 apt install -y openssh-server
 # allow only ssh key login, and disable root ssh
-sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
-sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
 
 # virtualization
 apt install -y qemu-kvm libvirt-daemon-system libvirt-clients virtinst bridge-utils
